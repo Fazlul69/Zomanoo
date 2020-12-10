@@ -14,7 +14,7 @@ $('#a').html(langArray);
 
 //Set the button value to the first el of the array
 $('.btn-select').html(langArray[0]);
-$('.btn-select').attr('value', 'en');
+$('.btn-select').attr('onclick', 'en');
 
 //change button stuff on click
 $('#a li').click(function(){
@@ -23,11 +23,18 @@ $('#a li').click(function(){
    var text = this.innerText;
    var item = '<li><img src="'+ img +'" alt="" /><span>'+ text +'</span></li>';
   $('.btn-select').html(item);
-  $('.btn-select').attr('value', value);
+  $('.btn-select').attr('onclick', value);
   $(".b").toggle();
   //console.log(value);
 });
 
 $(".btn-select").click(function(){
         $(".b").toggle();
+        location.href=$(".btn-select").attr("onclick");
     });
+
+window.onload = function(){
+      //location.href=$(".btn-select").attr("onclick");
+  }   
+
+   

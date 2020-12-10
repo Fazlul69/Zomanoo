@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/groceryTwo.css">
+    <title>Grocery Two</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background: #fdc75b;
+  color: #555555;
+}
+
+.wrapper{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.wrapper .title{
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+}
+
+.select_wrap{
+  width: 225px;
+  margin: 15px auto;
+  position: relative;
+  user-select: none;
+}
+
+.select_wrap .default_option{
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.select_wrap .default_option button{
+    padding: 10px 20px;
+}
+
+.select_wrap .default_option:before{
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid;
+    border-color: transparent transparent #555555 #555555;
+    transform: rotate(-45deg);
+}
+
+.select_wrap .select_ul{
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  display: none;
+}
+
+.select_wrap .select_ul button{
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.select_wrap .select_ul button:first-child:hover{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.select_wrap .select_ul button:last-child:hover{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.select_wrap .select_ul button:hover{
+  background: #fff4dd;
+}
+
+.select_wrap .option{
+  display: flex;
+  align-items: center;
+}
+
+.select_wrap .option .icon{
+  background: url('https://i.imgur.com/oEZu0sK.png') no-repeat 0 0;
+	width: 32px;
+	height: 32px;
+  margin-right: 15px;
+}
+
+.select_wrap .option.pizza .icon{
+  background-position: 0 0;
+}
+
+.select_wrap .option.burger .icon{
+  background-position:  0 -35px;
+}
+
+.select_wrap .option.ice .icon{
+  background-position: 0 -72px;
+}
+
+.select_wrap .option.fries .icon{
+ background-position: 0 -111px;
+  width: 25px;
+}
+
+.select_wrap.active .select_ul{
+  display: block;
+}
+
+.select_wrap.active .default_option:before{
+  top: 25px;
+  transform: rotate(-225deg);
+}
+    </style>
+  </head>
+  <body>
+
+    <!--nav Start-->
+    <div class="navbarOne">
+		<div class="row">
+			<div class="col-1">
+				<img src="images/logo.png" class="logo">
+			</div>
+			<div class="col-2 mid">
+			<!--	<select class="vodiapicker ">
+		            <option value="index.html" class="test" data-thumbnail="images/apple.svg">Grocery</option>
+		            <option value="groceryTwo.html" data-thumbnail="images/bakery.svg">Bakery</option>
+		            <option value="makeup" data-thumbnail="images/make-up.svg">Makeup</option>
+		            <option value="bags" data-thumbnail="images/shopping-bags.svg">Bags</option>
+		            <option value="clothing" data-thumbnail="images/clothes.svg">Clothing</option>
+		            <option value="furniture" data-thumbnail="images/furniture.svg">Furniture</option>
+		            <option value="book" data-thumbnail="images/book.svg">Book</option>
+		            <option value="mdcn" data-thumbnail="images/medicines.svg">Medicine</option>
+		      </select>
+
+				<div class="lang-select mb-3 col-4  ">
+					<div class="box">
+						<button class="btn-select" onclick="" type="button" id="categoryBth"></button>
+					</div>
+				
+					<div class="b">
+						<ul id="a"></ul>
+					</div>
+                </div> -->
+                <div class="select_wrap">
+                    <div class="default_option">
+                       <button><a>ami</a></button> 
+                    </div>
+                    <div class="select_ul">
+                        <button><a>ami</a></button>
+                       <button onclick="location.href='index.html'"> <a href="index.html">tmi</a></button>
+                        <button><a href="groceryTwo.html">sei</a></button>
+                    </div>
+                </div>
+			</div>
+			<div class="col-6 end">
+				<form class="cgQlyu headerSearch"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="18px" viewBox="0 0 17.048 18" style="margin-left:16px;margin-right:16px;color:#212121"><path id="Path_142" data-name="Path 142" d="M380.321,383.992l3.225,3.218c.167.167.341.329.5.506a.894.894,0,1,1-1.286,1.238c-1.087-1.067-2.179-2.131-3.227-3.236a.924.924,0,0,0-1.325-.222,7.509,7.509,0,1,1-3.3-14.207,7.532,7.532,0,0,1,6,11.936C380.736,383.462,380.552,383.685,380.321,383.992Zm-5.537.521a5.707,5.707,0,1,0-5.675-5.72A5.675,5.675,0,0,0,374.784,384.513Z" transform="translate(-367.297 -371.285)" fill="currentColor"></path></svg><input type="search" value="" name="search" placeholder="Search your products from here" class="search-boxstyle__StyledInput-x0hjfp-1 bNhkLo"></form>
+			</div>
+			
+			<div class="col-3 end">
+				<ul>
+					<li class="join"><a href="#" data-toggle="modal" data-target="#exampleModal">Join</a></li>
+					<li class="first"><a href="#"><img src="images/question.png" width="14px" height="14px" class="needImg">Need Help</a></li>
+					<li class="first"><a href="#">Offer</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+    <!-- modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <p class="modal-title" id="exampleModalLabel">Welcome Back</p>
+            <p class="log">Login with your Email & Password</p>
+    
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mb-3">
+            <div class="input-group mb-3">
+                <form>
+                    <input type="email" class="input_form" placeholder="demo@demo.com" required height="48px" aria-label="email" aria-describedby="basic-addon1">
+                    <input type="password" class="input_form" placeholder="demo" required height="48px" aria-label="password" aria-describedby="basic-addon1">
+                    <button type="submit" class="input_model" style="width: 100%;">Continue</button>
+                </form>
+            </div>
+            <div class="or"><span>or</span></div>
+            <div class="input-group mb-3">
+                <form>
+                <button  class="input_model" style="width: 100%; background-color: rgb(66, 103, 178); margin-bottom: 10px;">
+                <div class="in">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 17 17"><path data-name="_ionicons_svg_logo-facebook (1)" d="M80.061,64H64.939a.939.939,0,0,0-.939.939V80.061a.939.939,0,0,0,.939.939H72.5V74.271H70.468V71.792H72.5V69.959a3.23,3.23,0,0,1,3.484-3.391c.939,0,1.948.071,2.183.1v2.293H76.6c-1.067,0-1.271.5-1.271,1.248v1.58h2.541l-.332,2.479H75.333V81h4.728A.939.939,0,0,0,81,80.061V64.939A.939.939,0,0,0,80.061,64Z" transform="translate(-64 -64)" fill="currentColor"></path></svg>
+
+                </div>Continue with Facebook</button>
+            <button  class="input_model" style="width: 100%; background-color:  rgb(66, 133, 244); margin-bottom: 10px;">
+                <div class="in">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 16.677 17"><path d="M68.579,55.29l-.086-.364H60.584v3.348h4.725a4.73,4.73,0,0,1-4.627,3.556,5.533,5.533,0,0,1-3.724-1.484,5.316,5.316,0,0,1-1.586-3.752,5.483,5.483,0,0,1,1.557-3.748,5.3,5.3,0,0,1,3.7-1.447,4.825,4.825,0,0,1,3.147,1.226l2.379-2.367a8.417,8.417,0,0,0-5.6-2.158A8.391,8.391,0,0,0,52,56.6,8.541,8.541,0,0,0,54.326,62.5a8.873,8.873,0,0,0,6.4,2.6,7.891,7.891,0,0,0,5.747-2.416,8.486,8.486,0,0,0,2.207-5.878,9.788,9.788,0,0,0-.1-1.516Z" transform="translate(-52 -48.1)" fill="currentColor"></path></svg>
+                </div>
+            Continue with Google</button>
+            </form>
+            </div>
+            <p class=" wdkJZ" style="padding: 20px 0px;     text-align: center;">Don't have any account? <button class=" gMLTNm">Sign Up</button></p>
+            
+        </div>
+        <div class="modal-footer">
+            <p class="wdkJZ">Forgot your password? <button class=" gMLTNm">Reset It</button></p>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!--nav End-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/groceryTwo.js"></script>
+
+    <script>
+        $(".default_option").click(function(){
+  $(this).parent().toggleClass("active");
+})
+
+$(".select_ul button").click(function(){
+  var currentele = $(this).html();
+  $(".default_option button").html(currentele);
+  $(this).parents(".select_wrap").removeClass("active");
+})
+    </script>
+
+</body>
+</html>
