@@ -454,7 +454,7 @@ p#exampleModalLabel {
   text-decoration: none;
 }
 .description{
-  margin-top: -90px;
+  margin-top: 0px;
   background-image: url("../images/navback.png");
   background-size: cover;
   width: 100%;
@@ -474,6 +474,7 @@ p#exampleModalLabel {
   -moz-box-align: center;
   align-items: center;
   width: 100%;
+  margin-top: 60px;
 }
 
 
@@ -481,7 +482,9 @@ p#exampleModalLabel {
 
 
 /*carousel*/
-.slider{margin-top: 20px;}
+#slider {
+  margin-top: 131px;
+}
 
 .cPbqFF {
     width: 30px;
