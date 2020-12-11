@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/groceryTwo.css">
     <title>Grocery Two</title>
 
-    <style>
+   <!-- <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 *{
@@ -21,10 +21,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-body{
-  background: #fdc75b;
-  color: #555555;
-}
+
 
 .wrapper{
   position: absolute;
@@ -40,10 +37,12 @@ body{
 }
 
 .select_wrap{
-  width: 225px;
-  margin: 15px auto;
-  position: relative;
-  user-select: none;
+  width: 159px;
+margin: auto;
+position: relative;
+user-select: none;
+margin-top: 25px;
+margin-left: 40px;
 }
 
 .select_wrap .default_option{
@@ -54,9 +53,15 @@ body{
 }
 
 .select_wrap .default_option button{
-    padding: 10px 20px;
+    padding: 10px 30px;
+   border: none;
+  background-color: #fff;
+  color: rgb(0, 158, 127);
 }
-
+.select_wrap .default_option button>a{
+  color: rgb(0, 158, 127); 
+  margin-left: 12px;
+}
 .select_wrap .default_option:before{
     content: "";
     position: absolute;
@@ -77,11 +82,15 @@ body{
   background: #fff;
   border-radius: 5px;
   display: none;
+  z-index: 99;
 }
 
 .select_wrap .select_ul button{
   padding: 10px 20px;
-  cursor: pointer;
+cursor: pointer;
+border: none;
+width: 100%;
+margin-bottom: 5px;
 }
 
 .select_wrap .select_ul button:first-child:hover{
@@ -103,39 +112,18 @@ body{
   align-items: center;
 }
 
-.select_wrap .option .icon{
-  background: url('https://i.imgur.com/oEZu0sK.png') no-repeat 0 0;
-	width: 32px;
-	height: 32px;
-  margin-right: 15px;
-}
-
-.select_wrap .option.pizza .icon{
-  background-position: 0 0;
-}
-
-.select_wrap .option.burger .icon{
-  background-position:  0 -35px;
-}
-
-.select_wrap .option.ice .icon{
-  background-position: 0 -72px;
-}
-
-.select_wrap .option.fries .icon{
- background-position: 0 -111px;
-  width: 25px;
-}
 
 .select_wrap.active .select_ul{
-  display: block;
+  display: list-item;
+list-style-position: inside;
+width: 100%;
 }
 
 .select_wrap.active .default_option:before{
   top: 25px;
   transform: rotate(-225deg);
 }
-    </style>
+    </style>-->
   </head>
   <body>
 
@@ -146,7 +134,7 @@ body{
 				<img src="images/logo.png" class="logo">
 			</div>
 			<div class="col-2 mid">
-			<!--	<select class="vodiapicker ">
+				<select class="vodiapicker ">
 		            <option value="index.html" class="test" data-thumbnail="images/apple.svg">Grocery</option>
 		            <option value="groceryTwo.html" data-thumbnail="images/bakery.svg">Bakery</option>
 		            <option value="makeup" data-thumbnail="images/make-up.svg">Makeup</option>
@@ -165,17 +153,22 @@ body{
 					<div class="b">
 						<ul id="a"></ul>
 					</div>
-                </div> -->
-                <div class="select_wrap">
-                    <div class="default_option">
-                       <button><a>ami</a></button> 
-                    </div>
-                    <div class="select_ul">
-                        <button><a>ami</a></button>
-                       <button onclick="location.href='index.html'"> <a href="index.html">tmi</a></button>
-                        <button><a href="groceryTwo.html">sei</a></button>
-                    </div>
                 </div>
+              <!--  <div class="select_wrap" >
+                    <div class="default_option">
+                      <button onclick="location.href='index.html'" class="ptn ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20.347" height="24.101" viewBox="0 0 20.347 24.101"><g id="Grocery" transform="translate(-39.481 0.052)"><path id="Path_17386" data-name="Path 17386" d="M349.261,399.988a.469.469,0,1,1,.461-.385A.473.473,0,0,1,349.261,399.988Z" transform="translate(-294.289 -380.346)" fill="currentColor" stroke="currentColor" stroke-width="0.1"></path><path id="Path_17387" data-name="Path 17387" d="M58.743,8.638A6.2,6.2,0,0,0,55.4,6.3a6.662,6.662,0,0,0-3.058.055h0l-.034.008-.091.02c-.074.017-.188.045-.31.076-.16.041-.323.078-.485.108q0-.182-.014-.374a6.162,6.162,0,0,1,1.87-3.956A6.643,6.643,0,0,1,55.212.9.469.469,0,0,0,54.87.032a7.448,7.448,0,0,0-2.223,1.509,7.229,7.229,0,0,0-1.659,2.437,4.837,4.837,0,0,0-1.119-1.837C47.744.019,43.762.68,43.527.721h0a.457.457,0,0,0-.367.314.6.6,0,0,0-.017.066c-.027.151-.573,3.346.8,5.557a7.353,7.353,0,0,0-3.914,6.923,11.6,11.6,0,0,0,1.142,4.581,14.2,14.2,0,0,0,2.744,4.091A5.044,5.044,0,0,0,47.309,24a6.6,6.6,0,0,0,1.88-.276A3.331,3.331,0,0,1,51,23.691l.006,0,.11.031A6.6,6.6,0,0,0,53,24a4.912,4.912,0,0,0,3.25-1.608,13.985,13.985,0,0,0,4.029-8.812A8.163,8.163,0,0,0,58.743,8.638ZM49.206,2.8a5.247,5.247,0,0,1,1.256,3.409c-.017.211-.025,1.132-.025,1.132L46.881,3.794a.469.469,0,0,0-.663.663L49.8,8.033c-1.224.066-3.343-.027-4.572-1.255C43.75,5.3,43.912,2.552,44.02,1.6c.953-.108,3.709-.27,5.185,1.2ZM55.6,21.716A4.033,4.033,0,0,1,53,23.062a5.728,5.728,0,0,1-1.609-.236l-.141-.04h0a4.269,4.269,0,0,0-2.329.04,5.728,5.728,0,0,1-1.609.236A4.172,4.172,0,0,1,44.58,21.59a13.058,13.058,0,0,1-3.612-8.009c0-3.445,1.878-5.444,3.571-6.163l.024.024a6.632,6.632,0,0,0,4.665,1.547A9.91,9.91,0,0,0,50.9,8.863c.374-.082.365-.256.388-.364V8.482a9.219,9.219,0,0,0,.107-.965.475.475,0,0,0,.083-.007c.22-.038.441-.085.658-.142.084-.022.165-.042.232-.058,1.934.674,3.846,2.849,3.846,6.269a9.857,9.857,0,0,1-.747,3.455.469.469,0,1,0,.874.339,10.789,10.789,0,0,0,.811-3.795,7.594,7.594,0,0,0-3.162-6.493,4.317,4.317,0,0,1,1.17.122c2.013.521,4.18,2.737,4.18,6.371A13.138,13.138,0,0,1,55.6,21.716Z" transform="translate(-0.5)" fill="currentColor" stroke="currentColor" stroke-width="0.1"></path></g></svg>
+                        <a href="index.html">Grocery</a></button>
+                    </div>
+                    <div class="select_ul" id="myDIV">
+                       <button onclick="location.href='index.html'" class="ptn active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20.347" height="24.101" viewBox="0 0 20.347 24.101"><g id="Grocery" transform="translate(-39.481 0.052)"><path id="Path_17386" data-name="Path 17386" d="M349.261,399.988a.469.469,0,1,1,.461-.385A.473.473,0,0,1,349.261,399.988Z" transform="translate(-294.289 -380.346)" fill="currentColor" stroke="currentColor" stroke-width="0.1"></path><path id="Path_17387" data-name="Path 17387" d="M58.743,8.638A6.2,6.2,0,0,0,55.4,6.3a6.662,6.662,0,0,0-3.058.055h0l-.034.008-.091.02c-.074.017-.188.045-.31.076-.16.041-.323.078-.485.108q0-.182-.014-.374a6.162,6.162,0,0,1,1.87-3.956A6.643,6.643,0,0,1,55.212.9.469.469,0,0,0,54.87.032a7.448,7.448,0,0,0-2.223,1.509,7.229,7.229,0,0,0-1.659,2.437,4.837,4.837,0,0,0-1.119-1.837C47.744.019,43.762.68,43.527.721h0a.457.457,0,0,0-.367.314.6.6,0,0,0-.017.066c-.027.151-.573,3.346.8,5.557a7.353,7.353,0,0,0-3.914,6.923,11.6,11.6,0,0,0,1.142,4.581,14.2,14.2,0,0,0,2.744,4.091A5.044,5.044,0,0,0,47.309,24a6.6,6.6,0,0,0,1.88-.276A3.331,3.331,0,0,1,51,23.691l.006,0,.11.031A6.6,6.6,0,0,0,53,24a4.912,4.912,0,0,0,3.25-1.608,13.985,13.985,0,0,0,4.029-8.812A8.163,8.163,0,0,0,58.743,8.638ZM49.206,2.8a5.247,5.247,0,0,1,1.256,3.409c-.017.211-.025,1.132-.025,1.132L46.881,3.794a.469.469,0,0,0-.663.663L49.8,8.033c-1.224.066-3.343-.027-4.572-1.255C43.75,5.3,43.912,2.552,44.02,1.6c.953-.108,3.709-.27,5.185,1.2ZM55.6,21.716A4.033,4.033,0,0,1,53,23.062a5.728,5.728,0,0,1-1.609-.236l-.141-.04h0a4.269,4.269,0,0,0-2.329.04,5.728,5.728,0,0,1-1.609.236A4.172,4.172,0,0,1,44.58,21.59a13.058,13.058,0,0,1-3.612-8.009c0-3.445,1.878-5.444,3.571-6.163l.024.024a6.632,6.632,0,0,0,4.665,1.547A9.91,9.91,0,0,0,50.9,8.863c.374-.082.365-.256.388-.364V8.482a9.219,9.219,0,0,0,.107-.965.475.475,0,0,0,.083-.007c.22-.038.441-.085.658-.142.084-.022.165-.042.232-.058,1.934.674,3.846,2.849,3.846,6.269a9.857,9.857,0,0,1-.747,3.455.469.469,0,1,0,.874.339,10.789,10.789,0,0,0,.811-3.795,7.594,7.594,0,0,0-3.162-6.493,4.317,4.317,0,0,1,1.17.122c2.013.521,4.18,2.737,4.18,6.371A13.138,13.138,0,0,1,55.6,21.716Z" transform="translate(-0.5)" fill="currentColor" stroke="currentColor" stroke-width="0.1"></path></g></svg>
+                        <a href="index.html">Grocery</a></button>
+                        <button onclick="location.href='groceryTwo.html'" class="ptn active">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20.347" height="24.101" viewBox="0 0 20.347 24.101"><g id="Grocery" transform="translate(-39.481 0.052)"><path id="Path_17386" data-name="Path 17386" d="M349.261,399.988a.469.469,0,1,1,.461-.385A.473.473,0,0,1,349.261,399.988Z" transform="translate(-294.289 -380.346)" fill="currentColor" stroke="currentColor" stroke-width="0.1"></path><path id="Path_17387" data-name="Path 17387" d="M58.743,8.638A6.2,6.2,0,0,0,55.4,6.3a6.662,6.662,0,0,0-3.058.055h0l-.034.008-.091.02c-.074.017-.188.045-.31.076-.16.041-.323.078-.485.108q0-.182-.014-.374a6.162,6.162,0,0,1,1.87-3.956A6.643,6.643,0,0,1,55.212.9.469.469,0,0,0,54.87.032a7.448,7.448,0,0,0-2.223,1.509,7.229,7.229,0,0,0-1.659,2.437,4.837,4.837,0,0,0-1.119-1.837C47.744.019,43.762.68,43.527.721h0a.457.457,0,0,0-.367.314.6.6,0,0,0-.017.066c-.027.151-.573,3.346.8,5.557a7.353,7.353,0,0,0-3.914,6.923,11.6,11.6,0,0,0,1.142,4.581,14.2,14.2,0,0,0,2.744,4.091A5.044,5.044,0,0,0,47.309,24a6.6,6.6,0,0,0,1.88-.276A3.331,3.331,0,0,1,51,23.691l.006,0,.11.031A6.6,6.6,0,0,0,53,24a4.912,4.912,0,0,0,3.25-1.608,13.985,13.985,0,0,0,4.029-8.812A8.163,8.163,0,0,0,58.743,8.638ZM49.206,2.8a5.247,5.247,0,0,1,1.256,3.409c-.017.211-.025,1.132-.025,1.132L46.881,3.794a.469.469,0,0,0-.663.663L49.8,8.033c-1.224.066-3.343-.027-4.572-1.255C43.75,5.3,43.912,2.552,44.02,1.6c.953-.108,3.709-.27,5.185,1.2ZM55.6,21.716A4.033,4.033,0,0,1,53,23.062a5.728,5.728,0,0,1-1.609-.236l-.141-.04h0a4.269,4.269,0,0,0-2.329.04,5.728,5.728,0,0,1-1.609.236A4.172,4.172,0,0,1,44.58,21.59a13.058,13.058,0,0,1-3.612-8.009c0-3.445,1.878-5.444,3.571-6.163l.024.024a6.632,6.632,0,0,0,4.665,1.547A9.91,9.91,0,0,0,50.9,8.863c.374-.082.365-.256.388-.364V8.482a9.219,9.219,0,0,0,.107-.965.475.475,0,0,0,.083-.007c.22-.038.441-.085.658-.142.084-.022.165-.042.232-.058,1.934.674,3.846,2.849,3.846,6.269a9.857,9.857,0,0,1-.747,3.455.469.469,0,1,0,.874.339,10.789,10.789,0,0,0,.811-3.795,7.594,7.594,0,0,0-3.162-6.493,4.317,4.317,0,0,1,1.17.122c2.013.521,4.18,2.737,4.18,6.371A13.138,13.138,0,0,1,55.6,21.716Z" transform="translate(-0.5)" fill="currentColor" stroke="currentColor" stroke-width="0.1"></path></g></svg>
+                          <a href="groceryTwo.html">Grocery Two</a></button>
+                    </div>
+                </div> -->
 			</div>
 			<div class="col-6 end">
 				<form class="cgQlyu headerSearch"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="18px" viewBox="0 0 17.048 18" style="margin-left:16px;margin-right:16px;color:#212121"><path id="Path_142" data-name="Path 142" d="M380.321,383.992l3.225,3.218c.167.167.341.329.5.506a.894.894,0,1,1-1.286,1.238c-1.087-1.067-2.179-2.131-3.227-3.236a.924.924,0,0,0-1.325-.222,7.509,7.509,0,1,1-3.3-14.207,7.532,7.532,0,0,1,6,11.936C380.736,383.462,380.552,383.685,380.321,383.992Zm-5.537.521a5.707,5.707,0,1,0-5.675-5.72A5.675,5.675,0,0,0,374.784,384.513Z" transform="translate(-367.297 -371.285)" fill="currentColor"></path></svg><input type="search" value="" name="search" placeholder="Search your products from here" class="search-boxstyle__StyledInput-x0hjfp-1 bNhkLo"></form>
@@ -245,10 +238,10 @@ body{
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/groceryTwo.js"></script>
 
-    <script>
+  <!--  <script>
         $(".default_option").click(function(){
-  $(this).parent().toggleClass("active");
-})
+         $(this).parent().toggleClass("active");
+        })
 
 $(".select_ul button").click(function(){
   var currentele = $(this).html();
@@ -256,6 +249,18 @@ $(".select_ul button").click(function(){
   $(this).parents(".select_wrap").removeClass("active");
 })
     </script>
+
+    <script>
+      var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("ptn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+    </script>-->
 
 </body>
 </html>

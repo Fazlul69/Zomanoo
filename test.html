@@ -1,176 +1,253 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Advanced Drop-down Menu | CodingNepal</title> -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style: none;
-  font-family: 'Montserrat', sans-serif;
-}
-
-body{
-  background: #fdc75b;
-  color: #555555;
-}
-
-.wrapper{
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.wrapper .title{
-  font-weight: 700;
-  font-size: 24px;
-  color: #fff;
-}
-
-.select_wrap{
-  width: 225px;
-  margin: 15px auto;
-  position: relative;
   user-select: none;
+  font-family: 'Poppins', sans-serif;
 }
-
-.select_wrap .default_option{
-  background: #fff;
+body{
+ background: #18191A;
+  overflow: hidden;
+}
+nav{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+nav .drop-btn{
+  width: 400px;
+  background: #242526;
   border-radius: 5px;
-  position: relative;
+  line-height: 55px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
+  padding: 0 20px;
+}
+nav .drop-btn span{
+  float: right;
+  line-height: 50px;
+  font-size: 28px;
   cursor: pointer;
 }
-
-.select_wrap .default_option button{
-    padding: 10px 20px;
-}
-
-.select_wrap .default_option:before{
-    content: "";
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 6px;
-    height: 6px;
-    border: 2px solid;
-    border-color: transparent transparent #555555 #555555;
-    transform: rotate(-45deg);
-}
-
-.select_wrap .select_ul{
+nav .tooltip{
   position: absolute;
-  top: 55px;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  border-radius: 5px;
+  right: 20px;
+  bottom: -20px;
+  height: 15px;
+  width: 15px;
+  background: #242526;;
+  transform: rotate(45deg);
   display: none;
 }
-
-.select_wrap .select_ul button{
-  padding: 10px 20px;
+nav .tooltip.show{
+  display: block;
+}
+nav .wrapper{
+  position: absolute;
+  top: 65px;
+  display: flex;
+  width: 400px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #242526;
+  display: none;
+  transition: all 0.3s ease;
+}
+nav .wrapper.show{
+  display: block;
+  display: flex;
+}
+.wrapper ul{
+  width: 400px;
+  list-style: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li{
+  line-height: 55px;
+}
+.wrapper ul li a{
+  position: relative;
+  color: #b0b3b8;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  text-decoration: none;
+}
+.wrapper ul li:hover a{
+  background: #3A3B3C;
+}
+ul li a .icon{
+  height: 40px;
+  width: 40px;
+  margin-right: 13px;
+  background: #ffffff1a;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li a .icon span{
+  line-height: 40px;
+  font-size: 20px;
+  color: #b0b3b8;
+}
+ul li a i{
+  position: absolute;
+  right: 10px;
+  font-size: 25px;
+  pointer-events: none;
+}
+.wrapper ul.setting-drop,
+.wrapper ul.help-drop{
+  display: none;
+}
+.wrapper .arrow{
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
   cursor: pointer;
 }
-
-.select_wrap .select_ul button:first-child:hover{
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.select_wrap .select_ul button:last-child:hover{
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.select_wrap .select_ul button:hover{
-  background: #fff4dd;
-}
-
-.select_wrap .option{
-  display: flex;
-  align-items: center;
-}
-
-.select_wrap .option .icon{
-  background: url('https://i.imgur.com/oEZu0sK.png') no-repeat 0 0;
-	width: 32px;
-	height: 32px;
+.wrapper .arrow span{
   margin-right: 15px;
 }
 
-.select_wrap .option.pizza .icon{
-  background-position: 0 0;
-}
-
-.select_wrap .option.burger .icon{
-  background-position:  0 -35px;
-}
-
-.select_wrap .option.ice .icon{
-  background-position: 0 -72px;
-}
-
-.select_wrap .option.fries .icon{
- background-position: 0 -111px;
-  width: 25px;
-}
-
-.select_wrap.active .select_ul{
-  display: block;
-}
-
-.select_wrap.active .default_option:before{
-  top: 25px;
-  transform: rotate(-225deg);
-}
     </style>
   </head>
   <body>
-    
-    <div class="wrapper">
-        <div class="title">
-          Custom Select Box
-        </div>
-        <div class="select_wrap">
-            <div class="default_option">
-               <button><a>ami</a></button> 
-            </div>
-            <div class="select_ul">
-                <button><a>ami</a></button>
-               <button> <a href="index.html">tmi</a></button>
-                <button><a href="groceryTwo.html">sei</a></button>
-            </div>
-        </div>
-        
+    <nav>
+      <div class="drop-btn">
+        Drop down <span class="fas fa-caret-down"></span>
       </div>
+<div class="tooltip">
+</div>
+<div class="wrapper">
+        <ul class="menu-bar">
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-home"></span></div>
+Home </a></li>
+<li class="setting-item"><a href="#">
+            <div class="icon">
+              <span class="fas fa-cog"></span></div>
+Settings & privacy <i class="fas fa-angle-right"></i>
+          </a></li>
+<li class="help-item"><a href="#">
+            <div class="icon">
+              <span class="fas fa-question-circle"></span></div>
+Help & support <i class="fas fa-angle-right"></i>
+          </a></li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-user"></span></div>
+About us </a></li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-comment-alt"></span></div>
+Feedback </a></li>
+</ul>
+<!-- Settings & privacy Menu-items -->
+        <ul class="setting-drop">
+<li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Settings & privacy</li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-user"></span></div>
+Personal info </a></li>
+<li><a href="#">
+              <div class="icon">
+                <span class="fas fa-lock"></span></div>
+Password </a></li>
+<li><a href="#">
+              <div class="icon">
+                <span class="fas fa-address-book"></span></div>
+Activity log </a></li>
+<li><a href="#">
+              <div class="icon">
+                <span class="fas fa-globe-asia"></span></div>
+Languages </a></li>
+<li><a href="#">
+              <div class="icon">
+                <span class="fas fa-sign-out-alt"></span></div>
+Log out </a></li>
+</ul>
+<!-- Help & support Menu-items -->
+        <ul class="help-drop">
+<li class="arrow back-help-btn"><span class="fas fa-arrow-left"></span>Help & support</li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-question-circle"></span></div>
+Help centre </a></li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-envelope"></span></div>
+Support Inbox </a></li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-comment-alt"></span></div>
+Send feedback </a></li>
+<li><a href="#">
+            <div class="icon">
+              <span class="fas fa-exclamation-circle"></span></div>
+Report problem </a></li>
+</ul>
+</div>
+</nav>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      
     <script>
-        $(".default_option").click(function(){
-  $(this).parent().toggleClass("active");
-})
-
-$(".select_ul button").click(function(){
-  var currentele = $(this).html();
-  $(".default_option button").html(currentele);
-  $(this).parents(".select_wrap").removeClass("active");
-})
+    const drop_btn = document.querySelector(".drop-btn span");
+    const tooltip = document.querySelector(".tooltip");
+    const menu_wrapper = document.querySelector(".wrapper");
+    const menu_bar = document.querySelector(".menu-bar");
+    const setting_drop = document.querySelector(".setting-drop");
+    const help_drop = document.querySelector(".help-drop");
+    const setting_item = document.querySelector(".setting-item");
+    const help_item = document.querySelector(".help-item");
+    const setting_btn = document.querySelector(".back-setting-btn");
+    const help_btn = document.querySelector(".back-help-btn");
+      drop_btn.onclick = (()=>{
+        menu_wrapper.classList.toggle("show");
+        tooltip.classList.toggle("show");
+      });
+      setting_item.onclick = (()=>{
+        menu_bar.style.marginLeft = "-400px";
+        setTimeout(()=>{
+          setting_drop.style.display = "block";
+        }, 100);
+      });
+      help_item.onclick = (()=>{
+        menu_bar.style.marginLeft = "-400px";
+        setTimeout(()=>{
+          help_drop.style.display = "block";
+        }, 100);
+      });
+      setting_btn.onclick = (()=>{
+        menu_bar.style.marginLeft = "0px";
+        setting_drop.style.display = "none";
+      });
+      help_btn.onclick = (()=>{
+        help_drop.style.display = "none";
+        menu_bar.style.marginLeft = "0px";
+      });
     </script>
-</body>
+
+  </body>
 </html>
+

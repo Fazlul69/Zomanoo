@@ -37,9 +37,7 @@ $(".btn-select").click(function(){
     location.href=$(".btn-select").attr("onclick");
 });
 
-window.onload = function(){
-    //location.href=$(".btn-select").attr("onclick");
-}   
+
 
 //check local storage for the lang
 var sessionLang = localStorage.getItem('lang');

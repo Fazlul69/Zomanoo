@@ -33,8 +33,5 @@ $(".btn-select").click(function(){
         location.href=$(".btn-select").attr("onclick");
     });
 
-window.onload = function(){
-      //location.href=$(".btn-select").attr("onclick");
-  }   
 
    
