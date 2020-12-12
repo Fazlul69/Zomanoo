@@ -1,6 +1,9 @@
 
 /*common*/
 a:hover{text-decoration: none;}
+.card-text,.card-title {
+  color: #000;
+}
 
 /*common*/
 
