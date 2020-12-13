@@ -31,7 +31,7 @@ $('#a li').click(function(){
 
 $(".btn-select").click(function(){
         $(".b").toggle();
-       // location.href=$(".btn-select").attr("onclick");
+        location.href=$(".btn-select").attr("onclick");
     });
 
 
