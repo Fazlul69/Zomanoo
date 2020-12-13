@@ -1,5 +1,6 @@
 
 //test for iterating over child elements
+$('.b').hide();
 var langArray = [];        
 $('.vodiapicker option').each(function(){
   var img = $(this).attr("data-thumbnail");
@@ -30,8 +31,11 @@ $('#a li').click(function(){
 
 $(".btn-select").click(function(){
         $(".b").toggle();
-        location.href=$(".btn-select").attr("onclick");
+       // location.href=$(".btn-select").attr("onclick");
     });
+
+
+
 
 
    
